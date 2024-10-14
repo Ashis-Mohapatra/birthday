@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #689ac7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+    width: 90%;
+  }
+  
+  .birthday-wish {
+    margin: 20px 0;
+  }
+  
+  .animated-title {
+    font-size: 2.5rem;
+    color: #ff1493;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .photo-section {
+    margin: 20px 0;
+  }
+  
+  .person-photo {
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    animation: bounceIn 2.5s ease;
+  }
+  
+  .message p {
+    font-size: 2.2rem;
+    color: #f510c3;
+    animation: slideUp 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .animated-title {
+      font-size: 2rem;
+    }
+    
+    .message p {
+      font-size: 1rem;
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffe4e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Full page wrapper */
+  .container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Animated Balloons */
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 80px;
+    height: 120px;
+    background-color: #dd0f0f;
+    border-radius: 50% 50% 50% 50%;
+    animation: rise 6s ease-in-out infinite;
+  }
+
+  .balloon:nth-child(2) {
+    left: 20%;
+    background-color: #2e0ab1;
+    animation-delay: 2s;
+  }
+
+  .balloon:nth-child(3) {
+    left: 40%;
+    background-color: #13b43b;
+    animation-delay: 4s;
+  }
+
+  .balloon:nth-child(4) {
+    left: 60%;
+    background-color: #e40e9d;
+    animation-delay: 6s;
+  }
+
+  .balloon:nth-child(5) {
+    left: 80%;
+    background-color: #ff8a80;
+    animation-delay: 3s;
+  }
+
+  @keyframes rise {
+    0% {
+      bottom: -150px;
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(30px);
+    }
+    100% {
+      bottom: 100%;
+      transform: translateX(-30px);
+    }
+  }
+
+  /* Welcome Message */
+  h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4081;
+    font-size: 3em;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Responsive button for wishes */
+  .birthday-button {
+    background-color: #ff4081;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 20px;
+    animation: pulse 1.5s infinite;
+  }
+
+  .birthday-button:hover {
+    background-color: #e91e63;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5em;
+    }
+    .birthday-button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+    }
+  }
+ 
+  /* Slideshow container */
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    
+  }
+  
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeEffect 20s infinite;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animation for fade in/out effect */
+  @keyframes fadeEffect {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    20% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  
+  /* Ensure each slide appears at a different interval */
+  .slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .slide:nth-child(2) {
+    animation-delay: 5s;
+  }
+  .slide:nth-child(3) {
+    animation-delay: 10s;
+  }
+  .slide:nth-child(4) {
+    animation-delay: 15s;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .birthday-title {
+      font-size: 2rem;
+    }
+    
+    .birthday-message {
+     
+      font-family: 'Pacifico', cursive;
+    color: #ff4081;
+    font-size: 3em;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
+  }
+    }
+    
+    .slideshow-container {
+      height: 300px;
+    }
+  
